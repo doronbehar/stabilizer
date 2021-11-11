@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["AttenuatorInterface","Provide an interface for managing digital attenuators on Pounder hardware."]]});

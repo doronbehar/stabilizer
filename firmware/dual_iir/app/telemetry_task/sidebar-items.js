@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["Monotonic",""]],"struct":[["SharedResources","Shared resources `telemetry_task` has access to"]]});

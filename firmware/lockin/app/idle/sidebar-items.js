@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["SharedResources","Shared resources `idle` has access to"]]});

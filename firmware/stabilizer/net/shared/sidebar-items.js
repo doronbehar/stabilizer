@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["NetworkManager","A manager for a shared network stack."],["NetworkStackProxy","A basic proxy that references a shared network stack."]]});

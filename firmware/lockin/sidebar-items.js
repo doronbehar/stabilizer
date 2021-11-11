@@ -1,0 +1,1 @@
+initSidebarItems({"constant":[["ADC_SAMPLE_TICKS_LOG2",""],["BATCH_SIZE_SIZE_LOG2",""]],"enum":[["Conf",""],["LockinMode",""]],"mod":[["app","The RTIC application module"]],"struct":[["Settings",""]]});

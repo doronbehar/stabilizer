@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Adc0Input","Represents data associated with ADC."],["Adc1Input","Represents data associated with ADC."],["AdcCode","A type representing an ADC sample."]]});

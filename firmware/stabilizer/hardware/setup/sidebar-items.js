@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["setup","Configure the stabilizer hardware for operation."]],"struct":[["NetStorage",""],["NetworkDevices","The available networking devices on Stabilizer."],["PounderDevices","The available Pounder-specific hardware interfaces."],["StabilizerDevices","The available hardware interfaces on Stabilizer."],["TcpSocketStorage",""],["UdpSocketStorage",""]]});

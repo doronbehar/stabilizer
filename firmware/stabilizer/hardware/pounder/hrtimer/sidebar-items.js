@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Channel","A HRTimer output channel."]],"struct":[["HighResTimerE","The high resolution timer. Currently, only Timer E is supported."]]});

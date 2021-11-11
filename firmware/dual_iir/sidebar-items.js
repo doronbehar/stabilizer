@@ -1,0 +1,1 @@
+initSidebarItems({"constant":[["BATCH_SIZE",""],["IIR_CASCADE_LENGTH",""],["SAMPLE_TICKS_LOG2",""],["SCALE",""]],"mod":[["app","The RTIC application module"]],"struct":[["Settings",""]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["PowerMeasurementInterface","Provide an interface to measure RF input power in dBm."]]});

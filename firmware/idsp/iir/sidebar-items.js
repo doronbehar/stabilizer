@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["IIR","IIR configuration."]],"type":[["Vec5","IIR state and coefficients type."]]});

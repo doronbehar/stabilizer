@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["SystemTimer","System timer used for implementing RTIC scheduling."]]});

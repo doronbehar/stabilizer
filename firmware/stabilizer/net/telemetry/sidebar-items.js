@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Telemetry","The telemetry structure is data that is ultimately reported as telemetry over MQTT."],["TelemetryBuffer","The telemetry buffer is used for storing sample values during execution."],["TelemetryClient","The telemetry client for reporting telemetry data over MQTT."]]});

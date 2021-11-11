@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Gain",""]],"struct":[["ProgrammableGainAmplifier","A programmable gain amplifier that allows for setting the gain via GPIO."]]});
