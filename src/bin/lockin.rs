@@ -68,6 +68,11 @@ const BATCH_SIZE_SIZE_LOG2: u8 = 3;
 // period of 1.28 uS or 781.25 KHz.
 const ADC_SAMPLE_TICKS_LOG2: u8 = 7;
 
+// Copied from ./dual-iir.rs
+// The logarithm of the number of 100MHz timer ticks between each sample. With a value of 2^7 =
+// 128, there is 1.28uS per sample, corresponding to a sampling frequency of 781.25 KHz.
+const SAMPLE_TICKS_LOG2: u8 = 7;
+
 #[derive(Copy, Clone, Debug, Deserialize, Miniconf)]
 enum Conf {
     /// Output the lockin magnitude.
@@ -286,17 +291,16 @@ mod app {
         stabilizer.timestamper.start();
 
         let signal_config = {
-            let frequency_tuning_word =
-                (1u64 << (32 - BATCH_SIZE_SIZE_LOG2)) as i32;
-
-            signal_generator::Config {
-                // Same frequency as batch size.
-                frequency_tuning_word: [
-                    frequency_tuning_word,
-                    frequency_tuning_word,
-                ],
-                // 1V Amplitude
-                amplitude: DacCode::try_from(1.0).unwrap().into(),
+            signal_generator::BasicConfig {
+                // ~0.1V Amplitude
+                amplitude: DacCode::try_from(0.1).unwrap().into(),
+                // A sort of generalization for "duty cycle".
+                symmetry: 0.5,
+                // It seems the limit is `2.0e5`. Above it the card shows a red LED that seem to
+                // indicate an error. Probably the NYQUIST check at ../hardware/signal_generator.rs
+                // fails and the error is indicated this way. Note however that even using 2.0e5
+                // which corresponds to 200Khz, seems to generate a not very clean signal.
+                frequency: 1.0e4,
 
                 signal: signal_generator::Signal::Cosine,
             }
@@ -317,7 +321,8 @@ mod app {
             timestamper: stabilizer.timestamper,
 
             signal_generator: signal_generator::SignalGenerator::new(
-                signal_config,
+                signal_config.try_into_config(SAMPLE_TICKS_LOG2)
+                .unwrap()
             ),
 
             pll,
