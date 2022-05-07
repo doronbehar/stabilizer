@@ -1,0 +1,2 @@
+" Use it with https://github.com/doronbehar/vim-prj
+au! BufReadPost Makefile au BufWritePost <buffer> !make test-final

@@ -1,0 +1,6 @@
+{
+  "rust-analyzer.diagnostics.disabled": [ "macro-error" ],
+  // "rust-analyzer.procMacro.enable": false,
+  "rust-analyzer.checkOnSave.allTargets": false,
+  "rust-analyzer.cargo.target": "thumbv7em-none-eabihf"
+}
