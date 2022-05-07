@@ -296,10 +296,10 @@ mod app {
                 amplitude: DacCode::try_from(0.1).unwrap().into(),
                 // A sort of generalization for "duty cycle".
                 symmetry: 0.5,
-                // It seems the limit is `2.0e5`. Above it the card shows a red LED that seem to
-                // indicate an error. Probably the NYQUIST check at ../hardware/signal_generator.rs
-                // fails and the error is indicated this way. Note however that even using 2.0e5
-                // which corresponds to 200Khz, seems to generate a not very clean signal.
+                // It seems the limit is `2.0e5` - 200Khz. Above it the card shows a red LED that
+                // seem to indicate an internal error. Probably the NYQUIST check at
+                // ../hardware/signal_generator.rs fails and the error is indicated this way. Note
+                // however that even using 2.0e5, seems to generate a not very clean signal.
                 frequency: 1.0e4,
 
                 signal: signal_generator::Signal::Cosine,
