@@ -89,6 +89,9 @@ enum Conf {
     Quadrature,
     /// Output the lockin internal modulation frequency as a sinusoid
     Modulation,
+    /// Output a multiplication of the signal internally generated and the input signal from adc0,
+    /// without frequency filtering
+    SimpleMultiplication,
 }
 
 #[derive(Copy, Clone, Debug, Miniconf, Deserialize, PartialEq)]
@@ -422,6 +425,11 @@ mod app {
 
                             Conf::Modulation => {
                                 signal_generator.next().unwrap() as i32
+                            }
+                            Conf::SimpleMultiplication => {
+                                let cur_sample = *adc_samples[0];
+                                signal_generator.next().unwrap()
+                                    .wrapping_mul(cur_sample as i16) as i32
                             }
                         };
 
